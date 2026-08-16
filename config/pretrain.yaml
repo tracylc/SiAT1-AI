@@ -1,0 +1,40 @@
+# Exact archived SiAT1 virtual-pretraining hyperparameters.
+# The two TSV paths are created from the released CSV tables by filtering their
+# ``pretrain_split`` column, as documented in README.md. Run this YAML from a
+# compatible public SESNet checkout after building the stated feature cache.
+name: SiAT1_pretrain
+dir: ../SiAT1-AI/work/pretrain_features
+fasta: ../SiAT1-AI/reference/SiAT1.fasta
+train_tsv:
+  - ../SiAT1-AI/data/virtual_pretrain_train.tsv
+valid_tsv:
+  - ../SiAT1-AI/data/virtual_pretrain_valid.tsv
+test_tsv:
+  - ../SiAT1-AI/data/virtual_pretrain_valid.tsv
+target_name: score
+local_name: null
+local_static: false
+local_freeze: false
+global_name: esm
+global_static: false
+global_freeze: true
+agg: attn
+agg_seq_score: true
+decoder: mlp
+decoder_seq_score: true
+batch_size: 256
+hidden: 256
+dropout: 0.1
+optim: adam
+warmup: -1
+rt: false
+seed: 42
+epoch: 300
+patience: 100
+lr: 1.0e-05
+checkpoint_dir: ../SiAT1-AI/work/pretrain_checkpoints
+result_file: ../SiAT1-AI/work/pretrain_result.pkl
+test_out: null
+monitor: val_corr
+monitor_mode: max
+ckpt: null

@@ -1,0 +1,6 @@
+# Final fine-tuned model weights are distributed through Zenodo, not Git.
+checkpoints/*.pt
+*.pt
+
+# Potts-model reference input is distributed through Zenodo, not Git.
+reference/SiAT1.braw
