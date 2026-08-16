@@ -27,7 +27,7 @@ SiAT1-AI/
   config/
     pretrain.yaml
   checkpoints/
-    fold1.pt ... fold5.pt   # available at Zenodo: DOI: 10.5281/zenodo.XXXXXXX
+    fold1.pt ... fold5.pt   # available at Zenodo: DOI: 10.5281/zenodo.21962712
 ```
 
 ## Released data
