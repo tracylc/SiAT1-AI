@@ -88,13 +88,7 @@ python scripts/score_virtual_mutants.py \
 ```
 
 For a double mutant, the model-1 historical joint label is the difference
-between ordered masked joint log probabilities of mutant and WT sequences:
-
-\[
-\Delta=\left[\log p(m_1|M,mask\,1)+\log p(m_2|M,mask\,1,2)\right]
--\left[\log p(w_1|WT,mask\,1)+\log p(w_2|WT,mask\,1,2)\right].
-\]
-
+between ordered masked joint log probabilities of mutant and WT sequences.
 Historical SiAT1 virtual labels used ESM-1v model 1 only. The optional command
 `--models 1 2 3 4 5` produces the five scores and their arithmetic mean for
 new virtual-data generation; it does not redefine the archived model-1 labels.
