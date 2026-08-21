@@ -49,9 +49,9 @@ both `relative_activity_percent_wt` and `relative_activity_wt`.
 ## Dependencies and public components
 
 The released scripts were tested with Python 3.9. Install the packages listed
-in `requirements.txt` and the public SESNet source
+in `requirements.txt` and the public fusion-model implementation source
 tree, which supplies `db/`, `df/`, `lit/`, and `model/` for fine-tuning and
-ensemble inference. The third-party components are:
+ensemble inference. The SiAT1 sequence–structure fusion model was implemented using the published SESNet framework. The third-party components are:
 
 - [ESM / ESM-1v](https://github.com/facebookresearch/esm):
   `esm1v_t33_650M_UR90S_1` to `_5`;
@@ -123,14 +123,8 @@ python scripts/finetune.py --data-dir data --output-dir work/cv_files
 ```
 
 The script recreates the released five-fold CV tables for the 63 experimental
-mutants and fits one global MinMax scaler to their raw `%WT` values. The scaler
-is:
-
-\[
-y_{norm}=(y_{\%WT}-4)/235, \qquad y_{\%WT}=4+235y_{norm}.
-\]
-
-Fine-tune the five fold-specific SESNet models with the archived architecture and
+mutants and fits one global MinMax scaler to their raw `%WT` values. 
+Fine-tune the five fold-specific models with the archived architecture and
 hyperparameters using:
 
 ```bash
